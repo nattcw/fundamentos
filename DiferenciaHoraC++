@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main(){
+  int H1, M1, S1, H2, M2, S2, H3, M3, S3, diferencia, hora1, hora2;
+  cout<<"Introducir 1ra hora en formato HH MM SS"<<endl;
+  cin>>H1>>M1>>S1;
+  cout<<"Introducir 2da hora en formato HH MM SS"<<endl;
+  cin>>H2>>M2>>S2;
+  hora1=S1+(M1*60)+(H1*3600);
+  hora2=S2+(M2*60)+(H2*3600);
+  if (hora1>hora2)
+    diferencia=hora1-hora2;
+  else
+    diferencia=hora2-hora1;
+  H3=0;
+  while (diferencia>=3600){
+    diferencia=diferencia-3600;
+    H3=H3+1;
+  }
+  M3=0;
+  while (diferencia>=60){
+    diferencia=diferencia-60;
+    M3=M3+1;
+  }
+  S3=diferencia;
+  cout<<"La diferencia entre las dos horas es: "<<endl;
+  cout<<H3<<M3<<S3;
+  getch();
+}
