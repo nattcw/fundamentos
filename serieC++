@@ -1,1 +1,28 @@
-
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Math.h"
+using namespace std;
+void main(){
+  float x, I, ST, N, e, p, w;
+  cout<<"Ingrese numero x entero"<<endl;
+  cin>>x;
+  cout<<"Ingrese numero N entero par"<<endl;
+  cin>>I;
+  I=I/2;
+  ST=3.14/5;
+  N=1;
+  e=1;
+  p=1;
+  while (N<=I){
+    while (e<=(N*2)){
+      p=p*e;
+      e=e+1;
+    }
+    w=pow(x,(N*2))/p*pow(-1,N);
+    ST=ST+w;
+    N=N+1;
+  }
+  cout<<"La suma de la series es: "<<ST;
+  getch();
+}
