@@ -1,0 +1,59 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main(){
+    int H1,M1,S1,H2,M2,S2,H3,M3,S3,diferencia, hora1, hora2;
+    do {
+        cout<<"Ingrese hora 1"<<endl;
+        cin>>H1;
+    }
+    while (!((H1>=0) && (H1<=23)));
+    do {
+        cout<<"Ingrese minuto 1"<<endl;
+        cin>>M1;
+    }
+    while (!((M1>=0) && (M1<=59)));
+    do {
+        cout<<"Ingrese segundo 1"<<endl;
+        cin>>S1;
+    }
+    while (!((S1>=0) && (S1<=59)));
+    do{
+        cout<<"Ingrese hora 2"<<endl;
+        cin>>H2;
+    }
+    while (!((H2>=0) && (H2<=23)));
+    do{
+        cout<<"Ingrese minuto 2"<<endl;
+        cin>>M2;
+    }
+    while (!((M2>=0) && (M2<=59)));
+    do{
+        cout<<"Ingrese segundo 2"<<endl;
+        cin>>S2;
+    }
+    while (!((S2>=0) && (S2<=59)));
+    hora1=H1*3600+M1*60+S1;
+    hora2=H2*3600+M2*60+S2;
+    if (hora1>hora2)
+        diferencia=hora1-hora2;
+    else
+        diferencia=hora2-hora1;
+    H3=0;
+    while (diferencia>3600){
+        diferencia=diferencia-3600;
+        H3=H3+1;
+    }
+    M3=0;
+    while (diferencia>60){
+        diferencia=diferencia-60;
+        M3=M3+1;
+    }
+    S3=diferencia;
+    cout<<"La diferencia entre las horas es: "<<endl;
+    cout<<H3<<":"<<M3<<":"<<S3;            
+    getch();
+}
