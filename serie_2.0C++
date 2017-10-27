@@ -1,0 +1,44 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+int factorial (int N);
+float suma (int N, float x);
+
+void main(){
+    float x, S;
+    int N;
+    cout<<"Ingrese un numero real"<<endl;
+    cin>>x;
+    do {
+        cout<<"ingrese un numero entero par"<<endl;
+        cin>>N;
+    }
+    while (!((N>0) && (N%2==0)));
+    S= suma(N,x);
+    cout<<"la suma es"<<S;
+    getch ();
+}
+
+
+int factorial (int N){
+    int f=1, c=1;
+    while (c<=N){
+        f=f*c;
+        c=c+1;
+    }
+    return f;
+}
+
+float suma (int N, float x) {
+    float s=3.14/5;
+    int I=1;
+    while (I*2<=N) {
+        s=s+ (pow(x,I*2)/factorial(I*2))*pow(-1.0,I);
+        I=I+1;
+    }
+    return s;
+}
