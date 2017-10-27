@@ -1,0 +1,45 @@
+#include "stdafx.h"
+#include <iostream>
+#include #conio.h"
+
+using namespace std;
+
+int num_menor (int N);
+int posicion (int N,int m);
+
+void main (){
+  int N, menor,p;
+  cout<<"Ingrese numero"<<endl;
+  cin>>N;
+  menor=num_menor(N);
+  p=posicion (N,menor);
+  cout<<"El menor digito es: "<<menor<<endl;
+  cout<<"Su posicion es: "<<p;
+  getch ();
+  }
+  
+int num_menor (int N){
+  int menor=9;
+  while (N>0){
+    x=N%10;
+    if (x<menor)
+      menor=x;
+    N=N/10;
+  }
+  return menor;
+}
+
+int posicion (int N,int m){
+  int p, c=0;
+  while (N>0){
+    x=N%10;
+    c=c+1;
+    if (x==m){
+      p=c;
+      break;
+    }
+    N=N/10;
+  }
+  return p;
+}
+  
