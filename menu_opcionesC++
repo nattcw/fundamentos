@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void HOLA();
+void menor (int A, int B, int C);
+void val_abs (float x);
+
+void main(){
+  int opcion, a, b, c;
+  float x;
+  do{
+    cout<<"MENU"<<endl;
+    cout<<"Ingrese la opcion que desee obtener"<<endl;
+    cout<<"1. Imprimir HOLA"<<endl;
+    cout<<"2. Sacar el menor de 3 valores enteros"<<endl;
+    cout<<"3. Obtener el valor absoluto de un numero real"<<endl;
+    cout<<"4. FIN"<<endl;
+    cin>>opcion;
+    switch (opcion){
+      case 1: HOLA ();break;
+      case 2: {cout<<"Ingrese 3 valores"<<endl;
+               cin>>a;
+               cin>>b;
+               cin>>c;
+               menor (a,b,c);
+               break;}
+      case 3: {cout<<"Ingrese numero"<<endl;
+               cin>>x;
+               val_abs(x);
+               break;}
+      case 4: break;
+      default: cout<<"Opcion invalida";break;
+    }
+    while (opcion !=4);
+    getch ();
+  }
