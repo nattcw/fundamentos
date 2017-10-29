@@ -32,31 +32,33 @@ void main(){
                val_abs(x);
                break;}
       case 4: break;
-      default: cout<<"Opcion invalida";break;
+      default: cout<<"Opcion invalida"<<endl;break;
     }
-    while (opcion !=4);
-    getch ();
   }
+  while (opcion !=4);
+  getch ();
+}
   
- void HOLA(){
-   cout<<"HOLA";
+void HOLA(){
+   cout<<"HOLA"<<endl;
  }
  
- void menor (int A, int B, int C) {
+void menor (int A, int B, int C) {
    if ((A<B) && (A<C))
-     cout<<A;
+     cout<<A<<endl;
    else {
      if ((B<A) && (B<C))
-       cout<<B;
+       cout<<B<<endl;
      else
-       cout<<C;
+       cout<<C<<endl;
    }
  }
  
- void val_abs (float x){
-   if (x<0)
-     cout<<-x;
-   else
-     cout<< x;
- }
- 
+void val_abs (float x){
+   if (x<0){
+     cout<<-x<<endl;
+   }
+   else{
+     cout<< x<<endl;
+   }
+}
