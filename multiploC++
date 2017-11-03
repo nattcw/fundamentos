@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int Multiplo (int a, int b);
+
+void main (){
+    int A,B,m;
+    cout<<"ingrese un numero"<<endl;
+    cin>>A;
+    cout<<"ingrese otro numero"<<endl;
+    cin>>B;
+    m= Multiplo (A,B);
+    if (m==1)
+        cout<<"1- El mayor es multipo del menor";
+    else
+        cout<<"0- No son multiplos";
+    getch();
+}
+
+int Multiplo (int a, int b){
+    int m;
+    if (a>b)
+        if(a%b==0)
+            m=1;
+        else
+            m=0;
+    else
+        if(b%a==0)
+            m=1;
+        else
+            m=0;
+    return m;
+}
