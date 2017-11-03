@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main (){
+    int dias;
+    float d, precio, descuento;
+    cout<<"ingrese los dias de estadia"<<endl;
+    cin>>dias;
+    cout<<"ingrese la distancia a recorrer"<<endl;
+    cin>>d;
+    precio=0.75*d;
+    if ((d>800)&&(dias>7)){
+        descuento=precio*0.3;
+        precio=precio-descuento;
+    }
+    cout<<"El precio del boleto es: "<<precio;
+    getch();
+}
