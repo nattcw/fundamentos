@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Math.h"
+
+using namespace std;
+
+float suma_serie(float x, int n);
+int factorial (int n);
+
+void main (){
+    int N;
+    float Q,x;
+    cout<<"ingrese numero x"<<endl;
+    cin>>x;
+    cout<<"ingrese numero n"<<endl;
+    cin>>N;
+    Q= suma_serie(x,N);
+    cout<<"la suma de la serie es: "<<Q;
+    getch();
+}
+
+
+int factorial (int n){
+    int f=1, c=1;
+    while (c<=n){
+        f=f*c;
+        c=c+1;
+    }
+    return f;
+}
+
+float suma_serie(float x, int n){
+    float s=3.14;
+    int I=1;
+    while (I<n){
+        s=s+ pow(x,I)/factorial(I+1)*pow(-1.0,I);
+        I=I+1;
+    }
+    return s;
+}
