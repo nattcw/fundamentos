@@ -1,0 +1,30 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int suma_impares(int N);
+
+void main(){
+	int n,s;
+	cout<<"Ingrese su numero"<<endl;
+	cin>>n;
+	s=suma_impares(n);
+	cout<<"La suma de los impares es:  "<<s<<endl;
+	getch();
+}
+
+int suma_impares(int N){
+	int z=0,x;
+	while (N>0){
+		x=N%10;
+		  if(x%2!=0)
+			  z=z+x;
+        N=N/10;
+	}
+	return z;
+}
+
+
