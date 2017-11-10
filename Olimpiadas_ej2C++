@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int factorial(int N);
+bool curioso(int N);
+
+void main (){
+    int n;
+    bool flag;
+    cout<<"ingrese un numero"<<endl;
+    cin>>n;
+    flag=curioso(n);
+    if (flag)
+        cout<<"Es un numero curioso";
+    else
+        cout<<"no es curioso";
+    getch ();
+}
+
+int factorial(int N){
+    int f=1, c=1;
+    while (c<=N){
+        f=f*c;
+        c=c+1;
+    }
+    return f;
+}
+
+bool curioso(int N){
+    bool cur;
+    int x, s=0, num;
+    num=N;
+    while (N>0){
+        x=N%10;
+        s=s+factorial(x);
+        N=N/10;
+    }
+    if (num==s)
+        cur=true;
+    else
+        cur=false;
+    return cur;
+}
