@@ -1,0 +1,96 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#define MAX 100
+using namespace std;
+
+void cargar(int vec[],int n);
+void mostrar(int vec[],int n);
+void ordenar(int vec[],int n);
+int buscar(int vec[],int n,int &k);
+
+void main() {
+    int vector[MAX],n,opcion,elemento,k;
+    do{
+        cout<<"ingrese el numero de elementos";
+        cin>>n;
+
+
+
+
+    }
+    while((n<0)||(n>MAX));
+    do{
+        cout<<"MENU";
+        cout<<"1. Cargar Vector"<<endl;
+        cout<<"2. Mostrar Vector"<<endl;
+        cout<<"3. Ordenar Vector"<<endl;
+        cout<<"4. Buscar Vector"<<endl;
+        cout<<"0. Salir"<<endl;
+        cout<<"Opcion:"<<endl;
+        cin>>opcion;
+        switch (opcion){
+            case 1: cargar(vector,n);
+                    break;
+            case 2: mostrar(vector,n);
+                    break;
+            case 3: ordenar(vector,n);
+                    break;
+            case 4: k=buscar(vector,n,elemento);
+                    if (k==-9)
+                        cout<<"El elemento no se encuentra: ";
+                    else
+                        cout<<"El elemento se encuentra en la posicion: "<<k;
+                    break;
+            case 0: cout<<"Salir"<<endl;
+                    break;
+            default:cout<<"Opcion invalida";
+                    break;
+        }
+        getch ();
+        system("cls");
+    }
+    while(opcion!=0);
+    getch();
+}
+
+void cargar(int vec[],int n){
+    for (int i=0; i<n; i++){
+        cout<<"Ingresar vec["<<i<<"]="<<endl;
+        cin>>vec[i];
+    }
+}
+
+void mostrar(int vec[],int n){
+    for (int i=0; i<n-1; i++){
+        cout<<"vec["<<i<<"]="<<endl;
+        cout<<vec[i];
+    }
+}
+
+void ordenar(int vec[],int n){
+    int aux;
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
+            if(vec[j]<vec[i]){
+                aux=vec[i];
+                vec[i]=vec[j];
+                vec[j]=aux;
+            }
+        }
+    }
+}
+
+
+int buscar(int vec[],int n,int &k){
+    cout<<"Ingrese el numero"<<endl;
+    cin>>k;
+    if ((k<vec[0]) || (k>vec[n-1]))
+        return -9;
+    for (int i=0; i<n; i++){
+        if (vec[i]==k)
+            return i;
+    }
+    return -9;
+}
